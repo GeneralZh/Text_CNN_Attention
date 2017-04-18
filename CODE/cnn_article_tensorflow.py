@@ -302,8 +302,8 @@ batches = batch_iter(list(zip(x_train, y_train)), FLAGS.batch_size, FLAGS.num_ep
 results = []
 doc_idx = 0
 for num, batch in enumerate(batches):
-    #if num % 100 == 0:
-    print("batch {}".format(num))
+    if num % 100 == 0:
+        print("batch {}".format(num))
     x_batch, y_batch = zip(*batch)
     if len(x_batch) == FLAGS.batch_size:
         actmaps, predictions = sess.run([cnn.h_outputs, cnn.predictions],
